@@ -143,7 +143,7 @@ class MailgunBackend(BaseEmailBackend):
 
             response = requests.post(self._api_url + "messages",
                     auth=("api", self._access_key),
-                    data=content, headers=headers)
+                    data=content, headers=headers, verify=False)
         except:
             if not self.fail_silently:
                 raise
